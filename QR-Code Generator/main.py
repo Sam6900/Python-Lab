@@ -4,7 +4,7 @@ from PIL import Image
 url = "https://qrcode3.p.rapidapi.com/qrcode/text"
 
 payload = {
-    "data": "https://linqr.app",
+    "data": input("Enter the link or text to be displayed in the QR code: "),
     "style": {
         "module": {
             "color": "black",
@@ -35,5 +35,5 @@ response = requests.post(url, json=payload, headers=headers)
 with open("image.png", "wb") as f:
     f.write(response.content)
 
-with Image.open("image.png") as image:
-    image.show()
+with Image.open("image.png") as img:
+    img.show()
