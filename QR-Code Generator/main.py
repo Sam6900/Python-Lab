@@ -5,10 +5,6 @@ url = "https://qrcode3.p.rapidapi.com/qrcode/text"
 
 payload = {
     "data": "https://linqr.app",
-    "image": {
-        "uri": "icon://appstore",
-        "modules": True
-    },
     "style": {
         "module": {
             "color": "black",
