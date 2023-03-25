@@ -1,6 +1,5 @@
 import requests
-from io import BytesIO
-import PIL
+from PIL import Image
 
 url = "https://qrcode3.p.rapidapi.com/qrcode/text"
 
@@ -37,4 +36,8 @@ headers = {
 }
 
 response = requests.post(url, json=payload, headers=headers)
-print(response)
+with open("image.png", "wb") as f:
+    f.write(response.content)
+
+with Image.open("image.png") as image:
+    image.show()
